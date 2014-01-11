@@ -102,7 +102,9 @@ static NSArray* _colors = nil;
 
 - (void)didTap:(UITapGestureRecognizer*)tap
 {
-    self.view.backgroundColor = [_colors objectAtIndex:_colorIndex];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.backgroundColor = [_colors objectAtIndex:_colorIndex];
+    }];
     _colorIndex = (_colorIndex + 1) % [_colors count];
 }
 
